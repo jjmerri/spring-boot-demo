@@ -1,0 +1,7 @@
+databaseChangeLog:
+  # Create Demo tables
+  - include:
+      file: classpath:db/changelog/changelog-1-create-demo-tables.yaml
+  # Create Demo tables
+  - include:
+      file: classpath:db/changelog/changelog-2-add-demo-data.sql

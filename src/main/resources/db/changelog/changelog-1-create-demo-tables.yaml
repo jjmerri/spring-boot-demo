@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: jjmerri
+      remarks: Create the Demo Tables
+      changes:
+        - createTable:
+            catalogName: demodb
+            remarks: Customer Table
+            schemaName: public
+            tableName: customer
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    primaryKey: false
+                    nullable: false
+        - createTable:
+            catalogName: demodb
+            remarks: Account Table
+            schemaName: public
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: customer_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: false
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(50)
+                  constraints:
+                    primaryKey: false
+                    nullable: false
